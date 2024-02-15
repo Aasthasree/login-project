@@ -38,3 +38,11 @@ label {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+input.ng-invalid.ng-touched {
+  border: red 1px solid;
+}
+
+select.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
