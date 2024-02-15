@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
   <ng-container *ngIf="control.invalid && (control.touched || control.dirty)" class="validation-error">
   <small *ngIf="control.errors?.required" class="mt">{{key}} is required</small>
   <small *ngIf="control.errors?.pattern">{{key}} is invalid</small>
+  <small *ngIf="control.errors?.cannotContainSpace">No spaces allowed in {{key}}</small>
  </ng-container>
 `,
   styles: ['small { color: red; }']
