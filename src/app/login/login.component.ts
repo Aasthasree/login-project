@@ -10,7 +10,7 @@ import { CustomValidator } from '../shared/custom-validator/custom-validator';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
+  loginForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   initializeLoginForm(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, CustomValidator.cannotContainSpace]],
+      email: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required, CustomValidator.cannotContainSpace]]
     });
   }
