@@ -5,9 +5,9 @@
       <p>Please enter your credentials to login.</p>
     </div>
   </div>
-  <form [formGroup]="loginForm" >
+  <form [formGroup]="loginForm" (ngSubmit)="onClickSubmit()">
     <!-- Username -->
-    <div class="form-group ">
+    <div class="form-group">
       <label for="email"><span class="text-danger">*</span>Email:</label>
       <div>
         <input type="text" id="email" name="email" class="form-control" formControlName="email">
