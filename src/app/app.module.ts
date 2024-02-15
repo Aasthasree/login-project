@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 //Third-party
 import { ToastrModule } from 'ngx-toastr';
 //Custom Module
@@ -20,6 +21,7 @@ import { LoginComponent } from './login/login.component';
     //Angular Modules
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     //Third-party
     ToastrModule.forRoot(),
     //Custom Module
