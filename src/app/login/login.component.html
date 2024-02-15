@@ -12,6 +12,7 @@
       <div>
         <input type="text" id="email" name="email" class="form-control" formControlName="email" required>
       </div>
+      <app-validation [control]="loginForm.get('email')" [key]="'Email'"></app-validation>
     </div>
     <!-- Password -->
     <div class="form-group row">
@@ -19,6 +20,7 @@
       <div>
         <input type="password" id="password" name="password" class="form-control" formControlName="password" required>
       </div>
+      <app-validation [control]="loginForm.get('password')" [key]="'Password'"></app-validation>
     </div>
     <!-- Login -->
     <div class="form-group row">
