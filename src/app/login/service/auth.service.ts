@@ -1,5 +1,5 @@
 //Angular Imports
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 //RXJS Imports
 import { Observable } from 'rxjs';
@@ -23,9 +23,14 @@ export class AuthService {
     const creds = 'grant_type=password&password='
       + (credentials['password'])
       + '&username='
-      + (credentials['username']);
+      + (credentials['email']);
 
-    return this.http.post<any>(baseUrl, creds,);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': 'Basic ZlUza2tJMVpjMWd3R2NzOTdiN2RRWUh6Z2VCUzNUSEJLd0tldlp2aDpVdUdHWE12MnFDNGViS3lLeVNSWW95MUlUSmQxZU9uNUVZWE9hcTZDbU91QVV2Y0FVSGVKcDJzdjF3VFpmWkdXeFNWcWZvUTFwd3dnTkdnWDRVRm15MEpmTTgxNFJzcHB3NExQaHJ5d0FobGVnbUxVMnhkYWtvbkZyMWtmYWJYaA=='
+    });
+
+    return this.http.post<any>(baseUrl, creds, { headers: headers });
   }
 
 }
