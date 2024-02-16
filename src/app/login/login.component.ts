@@ -17,6 +17,7 @@ import { LoginResponse } from './login-model/login-model';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  loading: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   onClickSubmit(): void {
+    this.loading = true;
     const email = this.loginForm.get('email').value;
     const password = this.loginForm.get('password').value;
     const grant_type = 'password';
@@ -47,10 +49,12 @@ export class LoginComponent implements OnInit {
             console.log('Login successful:', response);
             this.toastrService.success('Login successful', 'Success');
           }
+          this.loading = false;
         },
         error: (error) => {
           console.error(error);
           this.toastrService.error('Invalid credentials', 'Error');
+          this.loading = false;
         },
       });
   }
