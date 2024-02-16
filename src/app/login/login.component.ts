@@ -7,6 +7,8 @@ import { ToastrService } from 'ngx-toastr';
 import { CustomValidator } from '../shared/custom-validator/custom-validator';
 //Service
 import { AuthService } from './service/auth.service';
+//Model
+import { LoginResponse } from './login-model/login-model';
 
 @Component({
   selector: 'app-login',
@@ -40,7 +42,7 @@ export class LoginComponent implements OnInit {
 
     this.authService.login({ grant_type, email, password })
       .subscribe({
-        next: (response: any) => {
+        next: (response: LoginResponse) => {
           if (response.access_token) {
             console.log('Login successful:', response);
             this.toastrService.success('Login successful', 'Success');
