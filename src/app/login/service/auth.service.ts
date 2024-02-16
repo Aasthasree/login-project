@@ -4,19 +4,18 @@ import { Injectable } from '@angular/core';
 //RXJS Imports
 import { Observable } from 'rxjs';
 //Environment
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-
   baseUrl: string = environment.apiUrl;
 
   constructor(
     private http: HttpClient
-  ){}
+  ) { }
 
 
   login(credentials: any): Observable<any> {
@@ -27,6 +26,6 @@ export class AuthService {
       + (credentials['username']);
 
     return this.http.post<any>(baseUrl, creds,);
-}
+  }
 
 }
