@@ -1,6 +1,8 @@
 //Angular Imports
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+//Third-party
+import { ToastrService } from 'ngx-toastr';
 //Custom Validator
 import { CustomValidator } from '../shared/custom-validator/custom-validator';
 //Service
@@ -16,7 +18,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private toastrService: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -40,10 +43,12 @@ export class LoginComponent implements OnInit {
         next: (response: any) => {
           if (response.access_token) {
             console.log('Login successful:', response);
+            this.toastrService.success('Login successful', 'Success');
           }
         },
         error: (error) => {
           console.error(error);
+          this.toastrService.error('Invalid credentials', 'Error');
         },
       });
   }
