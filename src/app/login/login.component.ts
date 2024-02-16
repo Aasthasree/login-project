@@ -25,19 +25,19 @@ export class LoginComponent implements OnInit {
 
   initializeLoginForm(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required,Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, CustomValidator.cannotContainSpace]]
     });
   }
 
   onClickSubmit(): void {
-    const username = this.loginForm.get('username').value;
+    const email = this.loginForm.get('email').value;
     const password = this.loginForm.get('password').value;
     const grant_type = 'password';
 
-    this.authService.login({ grant_type, username, password })
+    this.authService.login({ grant_type, email, password })
       .subscribe({
-        next: (response) => {
+        next: (response: any) => {
           if (response.access_token) {
             console.log('Login successful:', response);
           }
