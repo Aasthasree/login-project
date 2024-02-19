@@ -9,15 +9,15 @@
     <!-- Username -->
     <div class="form-group">
       <label for="email"><span class="text-danger">*</span>Email:</label>
-      <div>
+      <div class="col-md-20">
         <input type="text" id="email" name="email" class="form-control" formControlName="email">
       </div>
       <app-validation [control]="loginForm.get('email')" [key]="'Email'"></app-validation>
     </div>
     <!-- Password -->
-    <div class="form-group row">
+    <div class="form-group">
       <label for="password"><span class="text-danger">*</span>Password:</label>
-      <div>
+      <div class="col-md-20">
         <input type="password" id="password" name="password" class="form-control" formControlName="password">
       </div>
       <app-validation [control]="loginForm.get('password')" [key]="'Password'"></app-validation>
@@ -25,7 +25,7 @@
     <!-- Login -->
     <div class="form-group row">
       <div class="text-center">
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-success btn-lg" style="border-radius: 999px; min-width: 150px;">Login</button>
       </div>
     </div>
   </form>

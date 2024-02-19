@@ -8,10 +8,6 @@
   margin-top: 15vh;
 }
 
-.form-group {
-  margin-bottom: 30px;
-}
-
 label {
   margin-bottom: 8px;
   font-weight: bold;
@@ -25,18 +21,6 @@ label {
   box-sizing: border-box;
   border: 1px solid #ced4da;
   border-radius: 6px;
-}
-
-.btn-primary {
-  border-radius: 20px;
-  border: 1px solid #FF4B2B;
-  background-color: #FF4B2B;
-  color: #FFFFFF;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 12px 45px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 input.ng-invalid.ng-touched {
