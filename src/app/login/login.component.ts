@@ -18,7 +18,7 @@ import { LoginResponse } from './login-model/login-model';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  loading: boolean = false;
+  loading: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
