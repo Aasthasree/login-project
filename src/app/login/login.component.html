@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="login">
+    <div class="text-center">
+      <h3>LOGIN</h3>
+      <p>Please enter your credentials to login.</p>
+    </div>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onClickSubmit()">
+    <!-- Username -->
+    <div class="form-group">
+      <label for="email"><span class="text-danger">*</span>Email:</label>
+      <div class="col-md-20">
+        <input type="text" id="email" name="email" class="form-control" formControlName="email">
+      </div>
+      <app-validation [control]="loginForm.get('email')" [key]="'Email'"></app-validation>
+    </div>
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password"><span class="text-danger">*</span>Password:</label>
+      <div class="col-md-20">
+        <input type="password" id="password" name="password" class="form-control" formControlName="password">
+      </div>
+      <app-validation [control]="loginForm.get('password')" [key]="'Password'"></app-validation>
+    </div>
+    <!-- Login -->
+    <div class="form-group row">
+      <div class="text-center">
+        <button type="submit" class="btn btn-success btn-lg" style="border-radius: 999px; min-width: 150px;">Login</button>
+      </div>
+    </div>
+  </form>
+  <div class="spinner-container" [angularSpinner]="loading" spinnerStatus="active" spinnerSize="large" spinnerMessage="Logging in..."></div>
+</div>
