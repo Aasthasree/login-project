@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
         next: (response: LoginResponse) => {
           if (response.access_token) {
             console.log('Login successful:', response);
+            localStorage.setItem('token', response.access_token);
             this.router.navigate(['/customer']);
             this.toastrService.success('Login successful', 'Success');
           }
