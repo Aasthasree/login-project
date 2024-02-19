@@ -12,6 +12,7 @@ import { CustomerService } from '../../service/customer.service';
 })
 export class HomeComponent implements OnInit{
   customers: CustomerResponse;
+  loading: boolean;
 
   constructor(
     private customerService: CustomerService,
@@ -22,15 +23,18 @@ export class HomeComponent implements OnInit{
   }
 
   private getCustomers() {
+    this.loading = true;
     this.customerService.getCustomers().subscribe({
       next: (response) => {
         if (response) {
           this.customers = response;
         }
+        this.loading = false;
       },
       error: (error) => {
         console.error('Error fetching data:', error);
         alert(error);
+        this.loading = false;
       }
     });
   }
