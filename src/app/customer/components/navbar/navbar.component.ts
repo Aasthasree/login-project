@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 //Service
 import { AuthService } from 'src/app/login/service/auth.service';
 
@@ -9,10 +10,19 @@ import { AuthService } from 'src/app/login/service/auth.service';
 })
 export class NavbarComponent {
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private toastrService: ToastrService,
   ) { }
 
-  onClickLogout() {
-    this.authService.logout().subscribe();
+  onClickLogout(): void {
+    this.authService.logout().subscribe({
+      next: () => {
+        this.toastrService.success('Logout successful', 'Success');
+      },
+      error: (error) => {
+        console.error('Logout error:', error);
+      }
+    });
   }
+
 }
