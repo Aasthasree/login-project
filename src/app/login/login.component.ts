@@ -50,6 +50,8 @@ export class LoginComponent implements OnInit {
           if (response.access_token) {
             console.log('Login successful:', response);
             localStorage.setItem('token', response.access_token);
+            localStorage.setItem('refreshtoken', response.refresh_token);
+            localStorage.setItem('expirytime',response.expires_in.toString());
             this.router.navigate(['/customer']);
             this.toastrService.success('Login successful', 'Success');
           }
