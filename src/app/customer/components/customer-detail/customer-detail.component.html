@@ -1,1 +1,20 @@
-<p>customer-detail works!</p>
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="card" style="width: 18rem;">
+    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+      class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title text-center">Customer Detail</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <p><strong>Id:</strong> {{customerDetail?.id}}</p>
+      </li>
+      <li class="list-group-item"><strong>First Name:</strong> {{customerDetail?.default_contact?.first_name}}</li>
+      <li class="list-group-item"><strong>Last Name:</strong> {{customerDetail?.default_contact?.last_name}}</li>
+      <li class="list-group-item"><strong>Email:</strong> {{customerDetail?.default_contact?.email}}</li>
+      <li class="list-group-item"><strong>Company Name:</strong> {{customerDetail?.company_name}}</li>
+      <li class="list-group-item"><strong>Credit Name:</strong> {{customerDetail?.credit_term?.name}}</li>
+      <li class="list-group-item"><strong>Store Name:</strong> {{customerDetail?.store?.name}}</li>
+    </ul>
+  </div>
+</div>
