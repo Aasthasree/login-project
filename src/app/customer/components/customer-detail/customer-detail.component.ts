@@ -13,6 +13,7 @@ import { Customer } from '../../customer-model/customer.model';
 })
 export class CustomerDetailComponent implements OnInit {
   customerDetail: Customer;
+  loading: boolean;
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -25,15 +26,19 @@ export class CustomerDetailComponent implements OnInit {
   }
 
   getCustomerById() {
+    this.loading = true;
     const customerId = this.activeRoute.snapshot.paramMap.get('id');
     if (customerId) {
       this.customerService.getCustomer(customerId).subscribe({
         next: (data) => {
           this.customerDetail = data;
+          this.loading = false;
         },
+
         error: (error) => {
           console.error('Error fetching customer data:', error);
           alert(error);
+          this.loading = false;
         }
       });
     } else {
