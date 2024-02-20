@@ -9,13 +9,15 @@ import { CustomerRoutingModule } from './customer-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CustomerDetailComponent } from './components/customer-detail/customer-detail.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     LayoutComponent,
-    NavbarComponent
+    NavbarComponent,
+    CustomerDetailComponent
   ],
   imports: [
     CommonModule,
