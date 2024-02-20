@@ -20,7 +20,7 @@ export class AuthService {
   ) { }
 
   login(credentials: Login): Observable<LoginResponse> {
-    const baseUrl = `${this.baseUrl}/signin/token/`;
+    const baseUrl = `${this.baseUrl}signin/token/`;
     const creds = 'grant_type=password&password='
       + (credentials['password'])
       + '&username='
