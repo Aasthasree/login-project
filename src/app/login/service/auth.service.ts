@@ -20,18 +20,14 @@ export class AuthService {
   ) { }
 
   login(credentials: Login): Observable<LoginResponse> {
-    const baseUrl = `${this.baseUrl}signin/token/`;
+    const baseUrl = `${this.baseUrl}/signin/token/`;
     const creds = 'grant_type=password&password='
       + (credentials['password'])
       + '&username='
       + (credentials['email']);
 
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Authorization': 'Basic ZlUza2tJMVpjMWd3R2NzOTdiN2RRWUh6Z2VCUzNUSEJLd0tldlp2aDpVdUdHWE12MnFDNGViS3lLeVNSWW95MUlUSmQxZU9uNUVZWE9hcTZDbU91QVV2Y0FVSGVKcDJzdjF3VFpmWkdXeFNWcWZvUTFwd3dnTkdnWDRVRm15MEpmTTgxNFJzcHB3NExQaHJ5d0FobGVnbUxVMnhkYWtvbkZyMWtmYWJYaA=='
-    });
 
-    return this.http.post<LoginResponse>(baseUrl, creds, { headers: headers });
+    return this.http.post<LoginResponse>(baseUrl, creds,);
   }
 
 }
