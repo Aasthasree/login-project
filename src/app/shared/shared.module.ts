@@ -1,7 +1,7 @@
 //Angular Imports
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 //Components
 import { ValidationComponent } from './validation-component/validation.component';
 //Interceptor

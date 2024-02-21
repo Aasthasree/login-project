@@ -2,9 +2,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 //Components
-import { LayoutComponent } from './components/layout/layout.component';
-import { HomeComponent } from './components/home/home.component';
 import { CustomerDetailComponent } from './components/customer-detail/customer-detail.component';
+import { HomeComponent } from './components/home/home.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 const routes: Routes = [
   {

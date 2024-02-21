@@ -21,10 +21,10 @@ export class LoginComponent implements OnInit {
   loading: boolean;
 
   constructor(
-    private formBuilder: FormBuilder,
     private authService: AuthService,
+    private formBuilder: FormBuilder,
+    private router: Router,
     private toastrService: ToastrService,
-    private router: Router
   ) { }
 
   ngOnInit(): void {

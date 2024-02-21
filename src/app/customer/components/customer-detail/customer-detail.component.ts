@@ -1,6 +1,6 @@
 //Angular Imports
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 //Service
 import { CustomerService } from '../../service/customer.service';
 //Model

@@ -1,12 +1,12 @@
 //Angular Imports
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 //Third-party
-import { ToastrModule } from 'ngx-toastr';
 import { AngularSpinnerModule } from '@laijuthomas/angular-spinner';
+import { ToastrModule } from 'ngx-toastr';
 //Custom Module
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
@@ -25,11 +25,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
     //Angular Modules
     BrowserModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     //Third-party
-    ToastrModule.forRoot(),
     AngularSpinnerModule,
+    ToastrModule.forRoot(),
     //Custom Module
     AppRoutingModule,
     SharedModule,
