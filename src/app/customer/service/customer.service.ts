@@ -7,7 +7,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 //Environment
 import { environment } from 'src/environments/environment.development';
 //Model
-import { Customer, CustomerResponse } from '../customer-model/customer.model';
+import { Customer, CustomerResponse } from '../model/customer.model';
 
 @Injectable({
   providedIn: 'root'

@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 //Model
-import { CustomerResponse } from '../../customer-model/customer.model';
+import { CustomerResponse } from '../../model/customer.model';
 //Service
 import { CustomerService } from '../../service/customer.service';
 

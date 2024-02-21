@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 //Service
 import { CustomerService } from '../../service/customer.service';
 //Model
-import { Customer } from '../../customer-model/customer.model';
+import { Customer } from '../../model/customer.model';
 
 @Component({
   selector: 'app-customer-detail',
