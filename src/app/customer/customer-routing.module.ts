@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CustomerDetailComponent } from './components/customer-detail/customer-detail.component';
 import { HomeComponent } from './components/home/home.component';
 import { LayoutComponent } from './components/layout/layout.component';
+//Guard
+import { Resolver } from './service/resolver.guard';
 
 const routes: Routes = [
   {
@@ -12,7 +14,13 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      { path: 'home/:id', component: CustomerDetailComponent },
+      {
+        path: 'home/:id',
+        component: CustomerDetailComponent,
+        resolve: {
+          customer: Resolver
+        }
+      }
     ]
   }
 ];
