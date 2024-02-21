@@ -9,7 +9,7 @@ import { CustomValidator } from '../shared/custom-validator/custom-validator';
 //Service
 import { AuthService } from './service/auth.service';
 //Model
-import { LoginResponse } from './login-model/login-model';
+import { LoginResponse } from './model/login-model';
 
 @Component({
   selector: 'app-login',

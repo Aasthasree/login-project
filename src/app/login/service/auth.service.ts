@@ -7,7 +7,7 @@ import { Observable, catchError, map, tap, throwError } from 'rxjs';
 //Environment
 import { environment } from 'src/environments/environment.development';
 //Model
-import { Login, LoginResponse } from '../login-model/login-model';
+import { Login, LoginResponse } from '../model/login-model';
 
 @Injectable({
   providedIn: 'root'
