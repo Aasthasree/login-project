@@ -8,6 +8,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 //Guard
 import { Resolver } from './service/resolver.guard';
 
+
 const routes: Routes = [
   {
     path: '', component: LayoutComponent,

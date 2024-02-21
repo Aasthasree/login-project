@@ -1,23 +1,14 @@
 //Angular Imports
-import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-//RXJS Imports
-import { Observable } from 'rxjs';
+import { inject } from '@angular/core';
+import { ResolveFn } from '@angular/router';
+//service
+import { CustomerService } from './customer.service';
 //Model
 import { Customer } from '../model/customer.model';
-//Service
-import { CustomerService } from './customer.service';
 
-@Injectable({ providedIn: 'root' })
-export class Resolver implements Resolve<Customer> {
-  constructor(private customerService: CustomerService) { }
+export const Resolver: ResolveFn<Customer> = (route, state) => {
+  const customerService = inject(CustomerService);
 
-  resolve(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<Customer> | Promise<Customer> | Customer {
-
-    const customerId = route.paramMap.get('id');
-    return this.customerService.getCustomer(customerId);
-  }
-}
+  const customerId = route.paramMap.get('id');
+  return customerService?.getCustomer(customerId);
+};
