@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://pod6.salesonepro.com:5001/'
+  apiUrl: 'https://pod7.salesonepro.com:8001/'
 };
