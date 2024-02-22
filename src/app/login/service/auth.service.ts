@@ -29,7 +29,7 @@ export class AuthService {
     if (!isNaN(expiryTime) && expiryTime > 0) {
       this.timeInterval = setInterval(() => {
         this.refreshAccessToken().subscribe();
-      }, 100);
+      }, expiryTime);
     } else {
       console.error('Invalid expiry time or token has expired.');
     }
