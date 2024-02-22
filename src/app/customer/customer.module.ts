@@ -11,15 +11,12 @@ import { HomeComponent } from './components/home/home.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
-
-
 @NgModule({
   declarations: [
     CustomerDetailComponent,
     HomeComponent,
     LayoutComponent,
     NavbarComponent,
-
   ],
   imports: [
     AngularSpinnerModule,
