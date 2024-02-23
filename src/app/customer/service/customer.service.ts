@@ -7,7 +7,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 //Environment
 import { environment } from 'src/environments/environment.development';
 //Model
-import { CustomerResponse } from '../customer-model/customer.model';
+import { Customer, CustomerResponse } from '../model/customer.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +22,15 @@ export class CustomerService {
   ) { }
 
   getCustomers(): Observable<CustomerResponse> {
-    const url = `${this.baseUrl}/api/e/customers/`;
+    const url = `${this.baseUrl}api/e/customers/`;
     return this.http.get<CustomerResponse>(url).pipe(
+      catchError(this.handleError.bind(this))
+    );
+  }
+
+  getCustomer(id: string): Observable<Customer> {
+    const url = `${this.baseUrl}api/e/customers/${id}/`;
+    return this.http.get<Customer>(url).pipe(
       catchError(this.handleError.bind(this))
     );
   }
@@ -31,7 +38,7 @@ export class CustomerService {
   private handleError(error: HttpErrorResponse) {
     if (error.status === 404) {
       console.error('Resource not found:', error);
-      this.router.navigate(['/admin/home']);
+      this.router.navigate(['/customer/home']);
       return throwError(() => 'The requested resource was not found.');
     } else if (error.status === 500) {
       console.error('Internal Server Error:', error);

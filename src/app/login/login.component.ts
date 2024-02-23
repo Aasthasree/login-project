@@ -9,7 +9,7 @@ import { CustomValidator } from '../shared/custom-validator/custom-validator';
 //Service
 import { AuthService } from './service/auth.service';
 //Model
-import { LoginResponse } from './login-model/login-model';
+import { LoginResponse } from './model/login-model';
 
 @Component({
   selector: 'app-login',
@@ -21,10 +21,10 @@ export class LoginComponent implements OnInit {
   loading: boolean;
 
   constructor(
-    private formBuilder: FormBuilder,
     private authService: AuthService,
+    private formBuilder: FormBuilder,
+    private router: Router,
     private toastrService: ToastrService,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -50,6 +50,8 @@ export class LoginComponent implements OnInit {
           if (response.access_token) {
             console.log('Login successful:', response);
             localStorage.setItem('token', response.access_token);
+            localStorage.setItem('refreshtoken', response.refresh_token);
+            localStorage.setItem('expirytime',response.expires_in.toString());
             this.router.navigate(['/customer']);
             this.toastrService.success('Login successful', 'Success');
           }

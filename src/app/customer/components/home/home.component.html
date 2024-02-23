@@ -15,7 +15,7 @@
 
     <tbody>
       <ng-container *ngIf="customers?.results.length!==0; else noData">
-        <tr *ngFor="let data of customers?.results" style="cursor: pointer;">
+        <tr *ngFor="let data of customers?.results" (click)="onClickNavigate(data.id)" style="cursor: pointer;">
           <td>{{ data?.id}}</td>
           <td>{{ data?.default_contact?.first_name }}</td>
           <td>{{ data?.default_contact?.last_name }}</td>
@@ -31,4 +31,5 @@
     </tbody>
   </table>
 </div>
-<div class="spinner-container" [angularSpinner]="loading" spinnerStatus="active" spinnerSize="large" spinnerMessage="Loading..."></div>
+<div class="spinner-container" [angularSpinner]="loading" spinnerStatus="active" spinnerSize="large"
+  spinnerMessage="Loading..."></div>
